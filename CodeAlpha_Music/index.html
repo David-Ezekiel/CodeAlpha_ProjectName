@@ -1,137 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groove Music - Inspired Player</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <div class="groove-container">
-        <!-- Sidebar -->
-        <aside class="groove-sidebar" id="sidebar">
-            <button class="groove-hamburger" id="hamburgerBtn" aria-label="Toggle sidebar"><i class="fa fa-bars"></i></button>
-            <nav class="groove-nav">
-                <ul>
-                    <li class="groove-nav-group">Library</li>
-                    <li data-tab="home"><i class="fa fa-home"></i> <span>Home</span></li>
-                    <li class="active" data-tab="songs"><i class="fa fa-music"></i> <span>My music</span></li>
-                    <li data-tab="favorites"><i class="fa fa-star"></i> <span>Favorites</span></li>
-                    <li data-tab="artists"><i class="fa fa-user"></i> <span>Artists</span></li>
-                    <li data-tab="albums"><i class="fa fa-compact-disc"></i> <span>Albums</span></li>
-                    <li data-tab="genres"><i class="fa fa-tags"></i> <span>Genres</span></li>
-                    <li data-tab="recentlyadded"><i class="fa fa-plus-circle"></i> <span>Recently Added</span></li>
-                    <li data-tab="playlists"><i class="fa fa-list"></i> <span>Playlists</span></li>
-                    <li class="groove-nav-group">Activity</li>
-                    <li data-tab="recent"><i class="fa fa-history"></i> <span>Recent plays</span></li>
-                    <li data-tab="nowplaying"><i class="fa fa-play-circle"></i> <span>Now playing</span></li>
-                    <li data-tab="queue"><i class="fa fa-stream"></i> <span>Queue</span></li>
-                    <li class="groove-nav-group">Other</li>
-                    <li data-tab="equalizer"><i class="fa fa-sliders-h"></i> <span>Equalizer</span></li>
-                    <li data-tab="settings"><i class="fa fa-cog"></i> <span>Settings</span></li>
-                    <li data-tab="about"><i class="fa fa-info-circle"></i> <span>About</span></li>
-                </ul>
-            </nav>
-            <div class="groove-stream-promo">Stream millions of songs free</div>
-        </aside>
-        <!-- Main Content -->
-        <main class="groove-main">
-            <div class="groove-main-search">
-                <span class="groove-search-icon"><i class="fa fa-search"></i></span>
-                <input type="text" id="mainSearch" placeholder="Search music, artists, albums..." />
-            </div>
-            <div id="homeTab" class="groove-tab-content">
-                <h1><i class="fa fa-home"></i> Home</h1>
-                <div class="groove-add-music">
-                    <h2>Add some music</h2>
-                    <div class="groove-dragdrop" id="dragDropArea">
-                      <i class="fa fa-cloud-upload-alt"></i>
-                      <p>Drag & drop audio files here, or <label for="fileInput" class="groove-link" style="cursor:pointer;">browse</label></p>
-                    </div>
-                    <input type="file" id="fileInput" accept="audio/*" multiple style="display:none;">
-                </div>
-            </div>
-            <div id="songListTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-music"></i> My Music</h1>
-                <!-- Song list will be rendered here by JS -->
-            </div>
-            <div id="recentTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-history"></i> Recent Plays</h1>
-                <div class="groove-recent-placeholder">No recent plays yet.</div>
-            </div>
-            <div id="nowPlayingTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-play-circle"></i> Now Playing</h1>
-                <div class="groove-nowplaying-placeholder">No song is currently playing.</div>
-            </div>
-            <div id="playlistsTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-list"></i> Playlists</h1>
-                <div class="groove-playlists-placeholder">No playlists yet.</div>
-            </div>
-            <div id="favoritesTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-star"></i> Favorites</h1>
-                <div class="groove-favorites-placeholder">No favorite songs yet.</div>
-            </div>
-            <div id="artistsTab" class="groove-tab-content" style="display:none;"></div>
-            <div id="albumsTab" class="groove-tab-content" style="display:none;"></div>
-            <div id="genresTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-tags"></i> Genres</h1>
-                <div class="groove-genres-placeholder">No genres to display yet.</div>
-            </div>
-            <div id="recentlyAddedTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-plus-circle"></i> Recently Added</h1>
-                <div class="groove-recent-added-placeholder">No recently added songs.</div>
-            </div>
-            <div id="queueTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-stream"></i> Queue</h1>
-                <div class="groove-queue-placeholder">No songs in queue.</div>
-            </div>
-            <div id="equalizerTab" class="groove-tab-content" style="display:none;">
-                <h1><i class="fa fa-sliders-h"></i> Equalizer</h1>
-                <div class="groove-equalizer-placeholder">Equalizer controls coming soon.</div>
-            </div>
-        </main>
-        <!-- Player Bar -->
-        <footer class="groove-playerbar">
-            <div class="groove-player-info">
-                <img src="" alt="cover" class="groove-player-cover" id="playerCover">
-                <div>
-                    <div class="groove-player-title" id="playerTitle">No song</div>
-                    <div class="groove-player-artist" id="playerArtist">---</div>
-                </div>
-            </div>
-            <div class="groove-player-controls">
-                <button id="prevBtn"><i class="fa fa-step-backward"></i></button>
-                <button id="playPauseBtn"><i class="fa fa-play"></i></button>
-                <button id="nextBtn"><i class="fa fa-step-forward"></i></button>
-            </div>
-            <div class="groove-player-progress">
-                <span id="currentTime">0:00</span>
-                <input type="range" id="progressBar" min="0" max="100" value="0">
-                <span id="totalTime">0:00</span>
-            </div>
-            <div class="groove-player-volume">
-                <button id="muteBtn"><i class="fa fa-volume-up"></i></button>
-                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
-            </div>
-            <div class="groove-player-autoplay">
-                <button id="autoplayBtn" title="Autoplay"><i class="fa fa-random"></i></button>
-            </div>
-        </footer>
-        <div class="groove-footer">
-            <span>&copy; 2025 Groove Music Player &mdash; v1.0</span>
-            <span>
-                <a href="#" onclick="openModal('about');return false;">About</a>
-                <a href="#" onclick="openModal('help');return false;">Help</a>
-                <a href="#" target="_blank">Privacy</a>
-            </span>
+<body class="modern">
+  <header class="main-header">
+    <h1>Dave's Music Player</h1>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="bg">
+    <div class="player-card">
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="recents"><i class="fa-solid fa-clock-rotate-left"></i> Recents</button>
+        <button class="tab-btn" data-tab="favourites"><i class="fa-solid fa-heart"></i> Favourites</button>
+        <button class="tab-btn" data-tab="playlist"><i class="fa-solid fa-music"></i> Playlist</button>
+        <button class="add-song-btn" id="open-add-song-modal" title="Add Song"><i class="fa-solid fa-plus"></i> Add Song</button>
+      </div>
+      <div class="player-header">
+        <span class="music-note">&#9835; Dave's Music Player</span>
+        <span class="window-btns">
+          <span class="min-btn"></span>
+          <span class="close-btn"></span>
+        </span>
+      </div>
+      <div class="album-art">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=facearea&w=400&h=400&q=80" alt="Album Art">
+      </div>
+      <div class="track-info">
+        <div class="track-title" id="track-title">Paradoxum Calm</div>
+        <div class="track-artist" id="track-artist">Allen Smith</div>
+      </div>
+      <div class="progress-row">
+        <span id="current-time">00:00</span>
+        <input type="range" id="progress-bar" min="0" max="100" value="0">
+        <span id="total-duration">00:00</span>
+      </div>
+      <div class="volume-row">
+        <span class="volume-icon"><i class="fa-solid fa-volume-up"></i></span>
+        <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+        <button id="mute-btn" class="mute-btn" aria-label="Mute/Unmute"><i class="fa-solid fa-volume-xmark"></i></button>
+      </div>
+      <div class="controls-row">
+        <button id="prev" class="ctrl-btn" aria-label="Previous Track"><i class="fa-solid fa-backward-step"></i></button>
+        <button id="playpause" class="ctrl-btn" aria-label="Play/Pause"><i class="fa-solid fa-play"></i></button>
+        <button id="next" class="ctrl-btn" aria-label="Next Track"><i class="fa-solid fa-forward-step"></i></button>
+      </div>
+      <div class="more-row">
+        <span id="more-music">▼ More music</span>
+      </div>
+      <div class="tab-content">
+        <div id="recents-section" class="tab-section active"></div>
+        <div id="favourites-section" class="tab-section"></div>
+        <div id="playlist-section" class="tab-section">
+          <ul id="playlist"></ul>
+          <label class="autoplay-label">
+            <input type="checkbox" id="autoplay"> Autoplay
+          </label>
         </div>
+      </div>
     </div>
-    <!-- Modal containers for Settings and About -->
-    <div id="settingsModal" class="groove-modal" style="display:none;"></div>
-    <div id="aboutModal" class="groove-modal" style="display:none;"></div>
-    <audio id="audioPlayer"></audio>
-    <script src="script.js"></script>
+  </div>
+  <footer class="main-footer">
+    <span>Not finished</span>
+  </footer>
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+  <div id="add-song-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-add-song-modal" title="Close"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Add Song</h2>
+      <form id="add-song-form" class="add-song-form">
+        <input type="text" id="song-title-input" placeholder="Title" required>
+        <input type="text" id="song-artist-input" placeholder="Artist" required>
+        <input type="url" id="song-url-input" placeholder="Audio URL (mp3, wav, ogg)">
+        <input type="file" id="song-file-input" accept="audio/*">
+        <input type="url" id="song-cover-input" placeholder="Cover URL (optional)">
+        <button type="submit">Add Song</button>
+        <div class="add-song-note">Supported: mp3, wav, ogg. Use a file or a URL.</div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
