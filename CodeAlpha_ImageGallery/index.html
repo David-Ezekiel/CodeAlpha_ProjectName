@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Image Gallery - David's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="floating-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="gallery-header" role="banner">
+        <div class="header-content container">
+            <div class="header-text">
+                <h1 class="main-title">
+                    <span class="title-gradient">Dave</span> Image Gallery
+                </h1>
+                <!-- Removed subtitle -->
+                <div class="header-actions">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                        <input type="text" id="search-input" placeholder="Search images (e.g. nature, city, portrait)..." class="search-input" aria-label="Search images">
+                    </div>
+                    <button class="add-images-btn" id="add-images">
+                        <i class="fas fa-camera" aria-hidden="true"></i>
+                        <span>Add Your Images</span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-stats" aria-label="Gallery statistics">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-images">48</span>
+                    <span class="stat-label">Images</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Categories <i class="fas fa-info-circle" aria-hidden="true" style="margin-left:0.25rem;"></i></span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Views</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Gallery Container -->
+    <main class="gallery-container container" role="main">
+        <!-- Search and Filter Section -->
+        <section class="controls-section" aria-label="Gallery controls">
+            <div class="filter-controls">
+                <div class="filter-buttons" role="group" aria-label="Filter by category">
+                    <button class="filter-btn" data-filter="all"><i class="fas fa-border-all"></i> All</button>
+                    <button class="filter-btn" data-filter="nature"><i class="fas fa-leaf"></i> Nature</button>
+                    <button class="filter-btn" data-filter="urban"><i class="fas fa-city"></i> Urban</button>
+                    <button class="filter-btn" data-filter="wildlife"><i class="fas fa-paw"></i> Wildlife</button>
+                    <button class="filter-btn" data-filter="architecture"><i class="fas fa-landmark"></i> Architecture</button>
+                    <button class="filter-btn" data-filter="abstract"><i class="fas fa-shapes"></i> Abstract</button>
+                    <button class="filter-btn" data-filter="technology"><i class="fas fa-microchip"></i> Technology</button>
+                    <button class="filter-btn" data-filter="travel"><i class="fas fa-plane"></i> Travel</button>
+                    <button class="filter-btn" data-filter="portrait"><i class="fas fa-user"></i> Portrait</button>
+                </div>
+                <div class="view-controls" role="group" aria-label="Change gallery view">
+                    <button class="view-btn" data-view="masonry" title="Masonry View" aria-pressed="false">
+                        <i class="fas fa-th-large" aria-hidden="true"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" title="List View" aria-pressed="false">
+                        <i class="fas fa-list" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery" id="gallery" aria-label="Gallery images">
+            <!-- Nature Images -->
+            <div class="gallery-item" data-category="nature" data-title="Mountain Lake" data-description="Serene mountain lake reflection">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="Mountain Lake" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Mountain Lake</h3>
+                            <p>Serene mountain lake reflection</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Forest Path" data-description="Mystical forest pathway">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Forest Path" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Forest Path</h3>
+                            <p>Mystical forest pathway</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Ocean Waves" data-description="Powerful ocean waves crashing">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=800&q=80" alt="Ocean Waves" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Ocean Waves</h3>
+                            <p>Powerful ocean waves crashing</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Desert Sunset" data-description="Golden desert landscape">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80" alt="Desert Sunset" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Desert Sunset</h3>
+                            <p>Golden desert landscape</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Waterfall" data-description="Majestic waterfall cascade">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="Waterfall" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Waterfall</h3>
+                            <p>Majestic waterfall cascade</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Aurora Borealis" data-description="Northern lights display">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80" alt="Aurora Borealis" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Aurora Borealis</h3>
+                            <p>Northern lights display</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Cherry Blossoms" data-description="Spring cherry blossom trees">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=800&q=80" alt="Cherry Blossoms" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Cherry Blossoms</h3>
+                            <p>Spring cherry blossom trees</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature" data-title="Mountain Peak" data-description="Snow-capped mountain summit">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1464822759844-d150baec0494?auto=format&fit=crop&w=800&q=80" alt="Mountain Peak" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Mountain Peak</h3>
+                            <p>Snow-capped mountain summit</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- City Images -->
+            <div class="gallery-item" data-category="urban" data-title="Tokyo Skyline" data-description="Modern Tokyo cityscape at night">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo Skyline" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Tokyo Skyline</h3>
+                            <p>Modern Tokyo cityscape at night</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urban" data-title="New York Streets" data-description="Busy Manhattan intersection">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York Streets" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>New York Streets</h3>
+                            <p>Busy Manhattan intersection</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urban" data-title="London Bridge" data-description="Iconic Tower Bridge at sunset">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="London Bridge" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>London Bridge</h3>
+                            <p>Iconic Tower Bridge at sunset</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urban" data-title="Dubai Marina" data-description="Futuristic Dubai skyline">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai Marina" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Dubai Marina</h3>
+                            <p>Futuristic Dubai skyline</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urban" data-title="Paris Streets" data-description="Charming Parisian boulevard">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?auto=format&fit=crop&w=800&q=80" alt="Paris Streets" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Paris Streets</h3>
+                            <p>Charming Parisian boulevard</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="urban" data-title="Hong Kong Lights" data-description="Neon-lit Hong Kong streets">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&w=800&q=80" alt="Hong Kong Lights" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Hong Kong Lights</h3>
+                            <p>Neon-lit Hong Kong streets</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wildlife Images -->
+            <div class="gallery-item" data-category="wildlife" data-title="Majestic Lion" data-description="King of the jungle portrait">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80" alt="Majestic Lion" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Majestic Lion</h3>
+                            <p>King of the jungle portrait</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wildlife" data-title="Arctic Wolf" data-description="Beautiful arctic wolf in snow">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80" alt="Arctic Wolf" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Arctic Wolf</h3>
+                            <p>Beautiful arctic wolf in snow</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wildlife" data-title="Colorful Parrot" data-description="Vibrant tropical parrot">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80" alt="Colorful Parrot" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Colorful Parrot</h3>
+                            <p>Vibrant tropical parrot</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wildlife" data-title="Elephant Family" data-description="African elephant herd">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80" alt="Elephant Family" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Elephant Family</h3>
+                            <p>African elephant herd</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wildlife" data-title="Penguin Colony" data-description="Antarctic penguin gathering">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?auto=format&fit=crop&w=800&q=80" alt="Penguin Colony" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Penguin Colony</h3>
+                            <p>Antarctic penguin gathering</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Images -->
+            <div class="gallery-item" data-category="architecture" data-title="Modern Skyscraper" data-description="Contemporary glass architecture">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Modern Skyscraper" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Modern Skyscraper</h3>
+                            <p>Contemporary glass architecture</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="architecture" data-title="Gothic Cathedral" data-description="Medieval gothic architecture">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c93a?auto=format&fit=crop&w=800&q=80" alt="Gothic Cathedral" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Gothic Cathedral</h3>
+                            <p>Medieval gothic architecture</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="architecture" data-title="Modern Bridge" data-description="Architectural bridge design">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Modern Bridge" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Modern Bridge</h3>
+                            <p>Architectural bridge design</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="architecture" data-title="Classical Building" data-description="Neoclassical architecture">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80" alt="Classical Building" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Classical Building</h3>
+                            <p>Neoclassical architecture</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="architecture" data-title="Spiral Staircase" data-description="Elegant spiral architecture">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c93a?auto=format&fit=crop&w=800&q=80" alt="Spiral Staircase" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Spiral Staircase</h3>
+                            <p>Elegant spiral architecture</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstract Images -->
+            <div class="gallery-item" data-category="abstract" data-title="Colorful Waves" data-description="Vibrant abstract art composition">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=80" alt="Colorful Waves" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Colorful Waves</h3>
+                            <p>Vibrant abstract art composition</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="abstract" data-title="Geometric Patterns" data-description="Modern geometric design">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Geometric Patterns" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Geometric Patterns</h3>
+                            <p>Modern geometric design</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="abstract" data-title="Fluid Art" data-description="Dynamic fluid painting">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?auto=format&fit=crop&w=800&q=80" alt="Fluid Art" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Fluid Art</h3>
+                            <p>Dynamic fluid painting</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="abstract" data-title="Light Trails" data-description="Long exposure light photography">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&q=80" alt="Light Trails" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Light Trails</h3>
+                            <p>Long exposure light photography</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="abstract" data-title="Digital Art" data-description="Contemporary digital artwork">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Digital Art" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Digital Art</h3>
+                            <p>Contemporary digital artwork</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="abstract" data-title="Minimalist Design" data-description="Clean minimalist composition">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Minimalist Design" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Minimalist Design</h3>
+                            <p>Clean minimalist composition</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Images -->
+            <div class="gallery-item" data-category="technology" data-title="Circuit Board" data-description="Complex electronic circuitry">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&q=80" alt="Circuit Board" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Circuit Board</h3>
+                            <p>Complex electronic circuitry</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="technology" data-title="Robot Arm" data-description="Industrial automation">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="Robot Arm" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Robot Arm</h3>
+                            <p>Industrial automation</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="technology" data-title="Data Center" data-description="Modern server infrastructure">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Data Center" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Data Center</h3>
+                            <p>Modern server infrastructure</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="technology" data-title="Smartphone" data-description="Modern mobile technology">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Smartphone" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Smartphone</h3>
+                            <p>Modern mobile technology</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="technology" data-title="Virtual Reality" data-description="Immersive VR experience">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" alt="Virtual Reality" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Virtual Reality</h3>
+                            <p>Immersive VR experience</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="technology" data-title="AI Network" data-description="Artificial intelligence visualization">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Network" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>AI Network</h3>
+                            <p>Artificial intelligence visualization</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel Images -->
+            <div class="gallery-item" data-category="travel" data-title="Santorini Sunset" data-description="Greek island beauty">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorini Sunset" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Santorini Sunset</h3>
+                            <p>Greek island beauty</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="travel" data-title="Machu Picchu" data-description="Ancient Incan ruins">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Machu Picchu</h3>
+                            <p>Ancient Incan ruins</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="travel" data-title="Taj Mahal" data-description="Iconic Indian monument">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" alt="Taj Mahal" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Taj Mahal</h3>
+                            <p>Iconic Indian monument</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="travel" data-title="Northern Lights" data-description="Aurora borealis in Iceland">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80" alt="Northern Lights" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Northern Lights</h3>
+                            <p>Aurora borealis in Iceland</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="travel" data-title="Petra Jordan" data-description="Ancient rock-cut architecture">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80" alt="Petra Jordan" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Petra Jordan</h3>
+                            <p>Ancient rock-cut architecture</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="travel" data-title="Great Wall" data-description="Chinese architectural wonder">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="Great Wall" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Great Wall</h3>
+                            <p>Chinese architectural wonder</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portrait Images -->
+            <div class="gallery-item" data-category="portrait" data-title="Professional Portrait" data-description="Corporate headshot">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Professional Portrait" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Professional Portrait</h3>
+                            <p>Corporate headshot</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait" data-title="Artistic Portrait" data-description="Creative photography">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=800&q=80" alt="Artistic Portrait" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Artistic Portrait</h3>
+                            <p>Creative photography</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait" data-title="Street Portrait" data-description="Urban street photography">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Street Portrait" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Street Portrait</h3>
+                            <p>Urban street photography</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait" data-title="Fashion Portrait" data-description="High fashion photography">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" alt="Fashion Portrait" loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Fashion Portrait</h3>
+                            <p>High fashion photography</p>
+                            <div class="overlay-actions">
+                                <button class="action-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="action-btn" onclick="downloadImage(this)">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="action-btn" onclick="shareImage(this)">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button class="load-more-btn" id="load-more">
+                <i class="fas fa-plus-circle"></i>
+                <span class="btn-text">Load More Images</span>
+                <span class="btn-count">+12</span>
+            </button>
+        </div>
+        
+        <!-- Hidden file input for image upload -->
+        <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+    </main>
+
+    <!-- Advanced Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-container">
+            <div class="lightbox-header">
+                <div class="lightbox-info">
+                    <h3 id="lightbox-title">Image Title</h3>
+                    <p id="lightbox-description">Image description</p>
+                </div>
+                <div class="lightbox-controls">
+                    <button class="lightbox-btn" id="fullscreen-btn" title="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="lightbox-btn" id="download-btn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="lightbox-btn" id="share-btn" title="Share">
+                        <i class="fas fa-share"></i>
+                    </button>
+                    <button class="lightbox-btn" id="close-btn" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="lightbox-content">
+                <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="lightbox-image-container">
+                    <img id="lightbox-img" src="" alt="">
+                    <div class="lightbox-loading">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+                
+                <button class="lightbox-nav lightbox-next" id="lightbox-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="lightbox-footer">
+                <div class="lightbox-thumbnails" id="lightbox-thumbnails"></div>
+                <div class="lightbox-counter">
+                    <span id="current-image">1</span> / <span id="total-images-lightbox">24</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p><i class="far fa-copyright copyright-icon" aria-hidden="true" style="margin-right:0.25rem;"></i>Made by David</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/David-Ezekiel" class="footer-link" title="GitHub Profile" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-oreoluwa-ezekiel-343a60329/" class="footer-link" title="LinkedIn Profile" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

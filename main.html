@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David's CodeAlpha Projects Dashboard</title>
+    <link rel="stylesheet" href="main-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><i class="fas fa-code"></i> CodeAlpha Projects</h1>
+            </div>
+            <!-- Removed theme toggle button -->
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="hero-section">
+        </div>
+
+        <div class="projects-container">
+            <!-- Image Gallery Project -->
+            <div class="project-card" id="gallery-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="far fa-images"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Image Gallery</h3>
+                        <p class="project-subtitle">Interactive Photo Gallery with Lightbox</p>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="btn-primary" onclick="openProject('CodeAlpha_ImageGallery')">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </button>
+                    <button class="btn-secondary" onclick="previewProject('gallery')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                </div>
+            </div>
+
+            <!-- Calculator Project -->
+            <div class="project-card" id="calculator-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Calculator</h3>
+                        <p class="project-subtitle">Functional Calculator with Modern UI</p>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="btn-primary" onclick="openProject('CodeAlpha_Calculator')">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </button>
+                    <button class="btn-secondary" onclick="previewProject('calculator')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Project -->
+            <div class="project-card" id="portfolio-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p class="project-subtitle">Personal Portfolio Showcase</p>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="btn-primary" onclick="openProject('CodeAlpha_Portfolio')">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </button>
+                    <button class="btn-secondary" onclick="previewProject('portfolio')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                </div>
+            </div>
+
+            <!-- Music Player Project -->
+            <div class="project-card" id="music-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="far fa-play-circle"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Music Player</h3>
+                        <p class="project-subtitle">Interactive Audio Player</p>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="btn-primary" onclick="openProject('CodeAlpha_Music')">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </button>
+                    <button class="btn-secondary" onclick="previewProject('music')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Modal -->
+        <div class="modal" id="preview-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Project Preview</h3>
+                    <span class="close" onclick="closePreview()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <iframe id="preview-frame" src="" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary" id="open-full-project">
+                        <i class="fas fa-external-link-alt"></i> Open Full Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span>&copy; David's Internship Projects - 2025</span>
+        </div>
+    </footer>
+
+    <script src="main-script.js"></script>
+</body>
+</html>

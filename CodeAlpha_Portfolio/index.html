@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David - Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2><i class="fas fa-code"></i> David Portfolio <i class="fas fa-laptop-code"></i></h2>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/Dav (1).jpg" alt="Profile" style="vertical-align:middle;border-radius:50%;margin-right:8px;width:32px;height:32px;">
+                <a href="#home">David</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="fade-in"><i class="fas fa-code"></i> Hi, I'm David</h1>
+                <p class="fade-in">Full Stack Developer & Creative Problem Solver</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#projects" class="btn" style="background:#0f172a;">View Projects</a>
+                    <a href="#contact" class="btn btn-outline" style="background:#0f172a;">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-illustration">
+                    <div class="hero-profile-img-wrapper">
+                        <img src="assets/Dav (1).jpg" alt="David" class="hero-profile-img">
+                    </div>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-buttons">
+                                <span class="btn-red"></span>
+                                <span class="btn-yellow"></span>
+                                <span class="btn-green"></span>
+                            </div>
+                            <div class="window-title">portfolio.js</div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code>class Developer {
+  constructor(name) {
+    this.name = "David";
+    this.role = "Full Stack";
+    this.skills = ["React", "Node.js", "Python"];
+  }
+  
+  build() {
+    return "Amazing Apps";
+  }
+}
+
+const me = new Developer();
+console.log(me.build());</code></pre>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="--delay: 0s; color: #e34c26; top: 10px; left: -30px; font-size:1.6rem;"><i class="fab fa-html5"></i></div>
+                        <div class="floating-icon" style="--delay: 0.5s; color: #4db33d; bottom: 10px; right: -30px; font-size:1.6rem;"><i class="fas fa-database"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <p>Passionate developer with experience in modern web technologies. I love creating innovative solutions and bringing ideas to life through code. I am still learning and growing my skills in both frontend and backend development, and I am excited to continue improving as I work on new projects.</p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span><i class="fab fa-js-square"></i> JavaScript</span>
+                            <span><i class="fab fa-git-alt"></i> Git</span>
+                            <span><i class="fas fa-database"></i> SQL</span>
+                            <span><i class="fab fa-aws"></i> AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-icon" style="--delay: 0.5s; color: #3c873a; top: 8%; left: 3%; font-size:1.6rem;"><i class="fab fa-node-js"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="fade-in">Featured Projects</h2>
+            <p class="section-subtitle fade-in">Some of my recent work</p>
+            <div class="projects-grid">
+                <div class="project-card slide-in-left">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop&crop=center" alt="Image Gallery Project">
+                        <div class="project-overlay">
+                            <i class="fas fa-images"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Image Gallery</h3>
+                        <p>Interactive image gallery with advanced filtering, lightbox view, and responsive design. Built with vanilla JavaScript and modern CSS animations.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="../CodeAlpha_ImageGallery/index.html" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&crop=center" alt="Calculator Project">
+                        <div class="project-overlay">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Calculator</h3>
+                        <p>Modern calculator with memory functions, scientific operations, and smooth animations. Features a clean, intuitive interface with keyboard support.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="../CodeAlpha_Calculator/index.html" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card slide-in-right">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop&crop=center" alt="Music Player Project">
+                        <div class="project-overlay">
+                            <i class="fas fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Music Player</h3>
+                        <p>Interactive music player with playlist management, audio controls, and visual equalizer. Built with HTML5 Audio API and custom UI components.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="../CodeAlpha_Music/index.html" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-icon" style="--delay: 0.7s; color: #f7df1e; top: 22%; right: 10%; font-size:1.6rem;"><i class="fab fa-js-square"></i></div>
+                <div class="floating-icon" style="--delay: 1.2s; color: #f34f29; bottom: 15%; right: 8%; font-size:1.6rem;"><i class="fab fa-git-alt"></i></div>
+                <div class="floating-icon" style="--delay: 1.8s; color: #61dafb; top: 12%; left: 12%; font-size:1.6rem;"><i class="fab fa-react"></i></div>
+                <div class="floating-icon" style="--delay: 2.3s; color: #3776ab; bottom: 25%; left: 8%; font-size:1.6rem;"><i class="fab fa-python"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <p>Let's discuss your project! I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>davidoreezekiel@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+233 XXX XXX XXX</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Ghana</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="https://github.com/David-Ezekiel" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="contact-form slide-in-right">
+                    <h3>Send me a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-icon" style="--delay: 0.9s; color: #ff9900; top: 14%; right: 12%; font-size:1.6rem;"><i class="fab fa-aws"></i></div>
+                <div class="floating-icon" style="--delay: 2.1s; color: #007acc; top: 10%; left: 10%; font-size:1.6rem;"><i class="fab fa-java"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-flex">
+                <div style="font-weight:600;font-size:1.1rem;">David Ezekiel &nbsp;|&nbsp; 2025</div>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="https://github.com/David-Ezekiel" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-size:1.2rem;">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-oreoluwa-ezekiel-343a60329/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-size:1.2rem;">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

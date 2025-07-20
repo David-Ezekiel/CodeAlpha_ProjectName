@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove Music - Inspired Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="groove-container">
+        <!-- Sidebar -->
+        <aside class="groove-sidebar" id="sidebar">
+            <button class="groove-hamburger" id="hamburgerBtn" aria-label="Toggle sidebar"><i class="fa fa-bars"></i></button>
+            <nav class="groove-nav">
+                <ul>
+                    <li class="groove-nav-group">Library</li>
+                    <li data-tab="home"><i class="fa fa-home"></i> <span>Home</span></li>
+                    <li class="active" data-tab="songs"><i class="fa fa-music"></i> <span>My music</span></li>
+                    <li data-tab="favorites"><i class="fa fa-star"></i> <span>Favorites</span></li>
+                    <li data-tab="artists"><i class="fa fa-user"></i> <span>Artists</span></li>
+                    <li data-tab="albums"><i class="fa fa-compact-disc"></i> <span>Albums</span></li>
+                    <li data-tab="genres"><i class="fa fa-tags"></i> <span>Genres</span></li>
+                    <li data-tab="recentlyadded"><i class="fa fa-plus-circle"></i> <span>Recently Added</span></li>
+                    <li data-tab="playlists"><i class="fa fa-list"></i> <span>Playlists</span></li>
+                    <li class="groove-nav-group">Activity</li>
+                    <li data-tab="recent"><i class="fa fa-history"></i> <span>Recent plays</span></li>
+                    <li data-tab="nowplaying"><i class="fa fa-play-circle"></i> <span>Now playing</span></li>
+                    <li data-tab="queue"><i class="fa fa-stream"></i> <span>Queue</span></li>
+                    <li class="groove-nav-group">Other</li>
+                    <li data-tab="equalizer"><i class="fa fa-sliders-h"></i> <span>Equalizer</span></li>
+                    <li data-tab="settings"><i class="fa fa-cog"></i> <span>Settings</span></li>
+                    <li data-tab="about"><i class="fa fa-info-circle"></i> <span>About</span></li>
+                </ul>
+            </nav>
+            <div class="groove-stream-promo">Stream millions of songs free</div>
+        </aside>
+        <!-- Main Content -->
+        <main class="groove-main">
+            <div class="groove-main-search">
+                <span class="groove-search-icon"><i class="fa fa-search"></i></span>
+                <input type="text" id="mainSearch" placeholder="Search music, artists, albums..." />
+            </div>
+            <div id="homeTab" class="groove-tab-content">
+                <h1><i class="fa fa-home"></i> Home</h1>
+                <div class="groove-add-music">
+                    <h2>Add some music</h2>
+                    <div class="groove-dragdrop" id="dragDropArea">
+                      <i class="fa fa-cloud-upload-alt"></i>
+                      <p>Drag & drop audio files here, or <label for="fileInput" class="groove-link" style="cursor:pointer;">browse</label></p>
+                    </div>
+                    <input type="file" id="fileInput" accept="audio/*" multiple style="display:none;">
+                </div>
+            </div>
+            <div id="songListTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-music"></i> My Music</h1>
+                <!-- Song list will be rendered here by JS -->
+            </div>
+            <div id="recentTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-history"></i> Recent Plays</h1>
+                <div class="groove-recent-placeholder">No recent plays yet.</div>
+            </div>
+            <div id="nowPlayingTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-play-circle"></i> Now Playing</h1>
+                <div class="groove-nowplaying-placeholder">No song is currently playing.</div>
+            </div>
+            <div id="playlistsTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-list"></i> Playlists</h1>
+                <div class="groove-playlists-placeholder">No playlists yet.</div>
+            </div>
+            <div id="favoritesTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-star"></i> Favorites</h1>
+                <div class="groove-favorites-placeholder">No favorite songs yet.</div>
+            </div>
+            <div id="artistsTab" class="groove-tab-content" style="display:none;"></div>
+            <div id="albumsTab" class="groove-tab-content" style="display:none;"></div>
+            <div id="genresTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-tags"></i> Genres</h1>
+                <div class="groove-genres-placeholder">No genres to display yet.</div>
+            </div>
+            <div id="recentlyAddedTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-plus-circle"></i> Recently Added</h1>
+                <div class="groove-recent-added-placeholder">No recently added songs.</div>
+            </div>
+            <div id="queueTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-stream"></i> Queue</h1>
+                <div class="groove-queue-placeholder">No songs in queue.</div>
+            </div>
+            <div id="equalizerTab" class="groove-tab-content" style="display:none;">
+                <h1><i class="fa fa-sliders-h"></i> Equalizer</h1>
+                <div class="groove-equalizer-placeholder">Equalizer controls coming soon.</div>
+            </div>
+        </main>
+        <!-- Player Bar -->
+        <footer class="groove-playerbar">
+            <div class="groove-player-info">
+                <img src="" alt="cover" class="groove-player-cover" id="playerCover">
+                <div>
+                    <div class="groove-player-title" id="playerTitle">No song</div>
+                    <div class="groove-player-artist" id="playerArtist">---</div>
+                </div>
+            </div>
+            <div class="groove-player-controls">
+                <button id="prevBtn"><i class="fa fa-step-backward"></i></button>
+                <button id="playPauseBtn"><i class="fa fa-play"></i></button>
+                <button id="nextBtn"><i class="fa fa-step-forward"></i></button>
+            </div>
+            <div class="groove-player-progress">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+                <span id="totalTime">0:00</span>
+            </div>
+            <div class="groove-player-volume">
+                <button id="muteBtn"><i class="fa fa-volume-up"></i></button>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+            </div>
+            <div class="groove-player-autoplay">
+                <button id="autoplayBtn" title="Autoplay"><i class="fa fa-random"></i></button>
+            </div>
+        </footer>
+        <div class="groove-footer">
+            <span>&copy; 2025 Groove Music Player &mdash; v1.0</span>
+            <span>
+                <a href="#" onclick="openModal('about');return false;">About</a>
+                <a href="#" onclick="openModal('help');return false;">Help</a>
+                <a href="#" target="_blank">Privacy</a>
+            </span>
+        </div>
+    </div>
+    <!-- Modal containers for Settings and About -->
+    <div id="settingsModal" class="groove-modal" style="display:none;"></div>
+    <div id="aboutModal" class="groove-modal" style="display:none;"></div>
+    <audio id="audioPlayer"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
